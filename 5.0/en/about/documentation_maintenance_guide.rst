@@ -24,3 +24,23 @@ access.
 If you want to contribute changes without asking the maintainers to merge
 them, please add your GitHub username to your profile on plone.org and
 request access `here <http://dev.plone.org/wiki/ContributeCollective>`_.
+
+Some helper tools
+=================
+
+**Emacs** has a nice `rst-mode
+<http://docutils.sourceforge.net/docs/user/emacs.html>`_. This mode comes
+with some Emacs distros. Try ``M-x rst-mode`` in your Emacs and enjoy syntax
+coloration, underlining a heading with ``^C ^A``
+
+**Eclipse** users can install **ReST Editor** through the Eclipse
+Marketplace.
+
+**Vim** does syntax highlighting for RST files.
+There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_.
+
+**ReText** if you use Ubuntu or Debian you could also use **ReText** a Editor for **.rst** and **.md**
+
+.. code-block:: rst
+
+    apt-get install retext
