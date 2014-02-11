@@ -12,7 +12,7 @@ Documentation Styleguide
 
 Introduction
 ============
-This chapter explains the basics of editing, updating and contributing to
+This chapter explains the basic styleguidlines for
 the *Plone Documentation*.
 
 Style recommendations
