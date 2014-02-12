@@ -4,3 +4,5 @@ hi there. Please don't put anything here yet. We're working on a future version 
 thanks,
 
 the documentation team
+
+you can reach us on freenode in #plone-docs
