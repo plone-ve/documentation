@@ -14,7 +14,6 @@ and writing Javascript for Plone.
     css
     resourcefolders
     skin_layers
-    diazo
     xdv
     dtml
 

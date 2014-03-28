@@ -5,7 +5,7 @@ Adapting & Extending Plone
    :maxdepth: 2
    
    basics
-   theming/index
+   plone_3_theming/index
    config/index
    install_add_ons
    custom-ct/index

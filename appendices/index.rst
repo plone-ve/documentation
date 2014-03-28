@@ -5,4 +5,3 @@ Appendices
    :maxdepth: 1
    
    glossary.rst
-   error-reference.rst
