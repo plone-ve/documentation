@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><title>Managing Content — Plone CMS: Open Source Content Management</title><link rel="alternate" type="application/rss+xml" href="http://feeds.plone.org/plonenews" title="Plone News" /><link rel="alternate" type="application/rss+xml" href="http://feeds.plone.org/plonereleases" title="Plone Releases" /><link rel="alternate" type="application/rss+xml" href="http://feeds.plone.org/ploneevents" title="Upcoming Plone Events" /><link rel="alternate" type="application/rss+xml" href="http://feeds.plone.org/ploneaddons" title="Latest Plone &amp; Add-on Releases" /><link rel="alternate" type="application/rss+xml" href="http://feeds.plone.org/plonetraining" title="Upcoming Plone Training" /><link rel="alternate" type="application/rss+xml" href="http://feeds.plone.org/ploneblogs" title="Plone Blogs" /><link rel="alternate" type="application/rss+xml" href="http://feeds.plone.org/plone-security" title="Plone Security Advisories" /><!--[if IE]><style type="text/css" media="all">@import url(/ie.css);</style><![endif]--><!--[if lte IE 6]><script src="/ie6warn.js" type="text/javascript"></script><![endif]--><base href="http://plone.org/documentation/manual/plone-3-user-manual/managing-content/" /><style type="text/css">@import url(http://plone.org/portal_css/Sunburst%20Theme/kupustyles-cachekey-b4fbb6db12c35e54d08ccd63c14344a9.css);</style><style type="text/css">@import url(http://plone.org/portal_css/Sunburst%20Theme/print-cachekey-d490631f1b84d9e79b4010718443d6b0.css);</style><style type="text/css">@import url(http://plone.org/portal_css/Sunburst%20Theme/newplone-cachekey-aa924692466ad54a7226b9d2ed75e33a.css);</style><style type="text/css" media="screen">@import url(http://plone.org/portal_css/Sunburst%20Theme/resourceProducts.PloneSoftwareCenter.stylesheetspsc-cachekey-e3c641bee60aa1c931e63fc8f5498c6e.css);</style><style type="text/css" media="all">@import url(http://plone.org/portal_css/Sunburst%20Theme/psc-cachekey-50fe7d55249eb3bae674d4e00dd8a2de.css);</style><style type="text/css">@import url(http://plone.org/portal_css/Sunburst%20Theme/resourcecioppino.twothumbs.stylesheetstwothumbs-cachekey-90f965220d8ba5df83d380b6614fba98.css);</style><style type="text/css" media="screen">@import url(http://plone.org/portal_css/Sunburst%20Theme/resourcejquery-ui-themessunburstjqueryui-cachekey-d4fc29ba193804c13365d92a9c6f3461.css);</style><style type="text/css">@import url(http://plone.org/portal_css/Sunburst%20Theme/batman-cachekey-69e971ddcb196c2a06ffb7332332b3d0.css);</style><style type="text/css" media="screen">@import url(http://plone.org/portal_css/Sunburst%20Theme/resourceplone.app.vulnerabilities.vulnerabilities-cachekey-80e32ce197af6582055224a29b555464.css);</style><script type="text/javascript" src="http://plone.org/portal_javascripts/Sunburst%20Theme/resourceplone.app.jquery-cachekey-af9a4f238ff3056d1cfecf0add207c85.js"></script><script type="text/javascript" src="http://plone.org/portal_javascripts/Sunburst%20Theme/select_all-cachekey-b317ae0978c6eb74ee65734db4471670.js"></script><script type="text/javascript" src="http://plone.org/portal_javascripts/Sunburst%20Theme/resourcecarousel-cachekey-465d0a0d1d0f7380122d5e38860c23c1.js"></script><script type="text/javascript" src="http://plone.org/portal_javascripts/Sunburst%20Theme/resourcejquery-ui.min-cachekey-85ef2fd4c3e03cd25e675eb12be1341e.js"></script><script type="text/javascript" src="http://plone.org/portal_javascripts/Sunburst%20Theme/batman-cachekey-d151f8a4dced5c1066ecca4309261ba9.js"></script><script type="text/javascript">
+        jQuery(function($){
+            $.datepicker.setDefaults(
+                jQuery.extend($.datepicker.regional[''],
+                {dateFormat: 'mm/dd/yy'}));
+        });
+        </script></head><body class="template-default_error_message portaltype-helpcenterreferencemanualsection site-plone.org section-documentation subsection-manual subsection-manual-plone-3-user-manual subsection-manual-plone-3-user-manual-managing-content userrole-anonymous"><div id="outer-wrapper"><div id="inner-wrapper">
+
+<div id="nav"><a id="portal-logo" title="Plone CMS: Open Source Content Management" accesskey="1" href="http://plone.org">
+
+<img src="https://plone.org/logo@2x.png" alt="Plone CMS: Open Source Content Management" title="Plone CMS: Open Source Content Management" height="56" width="215" /></a>
+
+	<form id="search" name="searchform" action="http://plone.org/@@search"> 
+		<input id="search-site" name="SearchableText" type="text" title="Search this site…" accesskey="4" class="inputLabel" size="15" /></form>
+	
+	<div id="nav-bar">
+	
+	    <div id="user">
+    		<a id="login-link" href="/login">Log in</a>
+    		
+    		<a id="user-id" href="/@@personal-preferences"></a>
+    		
+    		
+    		<div id="login-popup">
+                <span class="loginText">Login to Plone.org</span>
+
+                <form id="login-slide-form" action="https://plone.org/login_form" method="post">
+                
+                    <div class="form">
+                        <input id="came-from-input" type="hidden" value="" name="came_from" /><input type="hidden" name="form.submitted" value="1" /><label for="__ac_name">username</label>
+                        <input type="text" id="__ac_name" value="" name="__ac_name" size="15" /><label for="__ac_password">password</label>
+                        <input type="password" id="__ac_password" value="" name="__ac_password" size="15" /><br /><a href="/mail_password_form?userid=">Forgot password?</a>
+                    </div>
+
+                    <input type="submit" value="Let me in!" name="submit" class="context" /></form>
+
+                <span class="createText"><a href="/@@register">Click here</a> to create an account</span>
+            </div>
+    		
+    	</div>
+	
+    	<ul id="main-nav" class="navigation"><li id="portaltab-index_html" class="plain"><a href="http://plone.org" title="">Home</a></li><li id="portaltab-products" class="plain"><a href="http://plone.org/products" title="Plone releases and available add-on products for Plone. Make sure you have Plone installed before downloading the add-ons — and make sure you are using add-ons that have been certified for use with your particular version.">Download &amp; Extend</a></li><li id="portaltab-documentation" class="selected"><a href="http://plone.org/documentation" title="The primary source for Plone documentation.">Documentation</a></li><li id="portaltab-community" class="plain"><a href="http://plone.org/community" title="Do you love Plone as much as we do? Maybe it's time to get involved and experience the best community open source has to offer.">Get Involved</a></li><li id="portaltab-foundation" class="plain"><a href="http://plone.org/foundation" title="The Plone Foundation exists to further the development, marketing, and legal affairs of Plone and the Plone community.">Plone Foundation</a></li><li id="portaltab-support" class="plain"><a href="http://plone.org/support" title="Support and contact details for the Plone project.">Support</a></li><li id="portaltab-providers" class="plain"><a href="http://plone.org/providers" title="">Providers</a></li><li id="portaltab-donate" class="plain"><a href="http://plone.org/donate" title="Plone is 100% powered by the Plone community.  We have no corporate backers, no venture capital, no lucrative advertising deals with Google.  And yet, we are among the largest, most successful and most vibrant open source projects in the world, thanks to you and the thousands of other people who are Plone.">Donate</a></li></ul></div>
+
+</div>
+
+
+
+<div id="edit-bar">
+	<div id="action-menu"></div>
+	<div id="edit-menu"></div>
+</div>
+
+
+
+<div id="content-wrapper">
+	<div class="grid-row">
+		<div class="grid-cell position-leftmost width-two-thirds">
+			<div id="viewlet-above-content"></div><div id="content">
+
+                            
+
+                            
+
+
+         
+
+
+        
+
+            
+
+                
+
+                <h1 class="documentFirstHeading">
+                    This page does not seem to exist…
+                </h1>
+
+                <div id="content-core">
+                    <p>
+ 	                    We apologize for the inconvenience, but the page you were trying to access is not at this address.
+                        You can use the links below to help you find what you are looking for.
+                     </p>
+
+                    <p>
+                        If you are certain you have the correct web address but are encountering an error, please
+                        contact the <span> <a href="http://plone.org/contact-info">Site Administration</a></span>.
+                    </p>
+
+                    <p>
+                    Thank you.
+                    </p>
+
+                    <!-- Offer search results for suggestions -->
+                    
+
+                        <h3>You might have been looking for…</h3>
+
+                        <dl><dt class="contenttype-helpcenterreferencemanual">
+                                  
+                                   <a href="http://plone.org/documentation/manual/plone-3-user-manual" class="state-published">Plone 3 User Manual</a>
+
+                                    <span class="discreet">
+                                    by jluvsu2,
+                                    Feb 04, 2009 02:35 AM
+                                    </span>
+
+                                </dt>
+
+                                <dd>A User Manual for Plone content creators and managers.</dd>
+
+                            
+                        
+
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/running-and-managing-content-heavy-web-projects" class="state-published">Running and Managing Content Heavy Web Projects</a>
+
+                                    <span class="discreet">
+                                    by pigeonflight,
+                                    Aug 10, 2010 07:32 PM
+                                    </span>
+
+                                </dt>
+
+                                <dd>Workshop designed to answer questions about managing content heavy websites.</dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/7-tech-nw-online-plone-content-management-fundamentals-1" class="state-published">7 Tech NW: Online - Plone Content Management Fundamentals</a>
+
+                                    <span class="discreet">
+                                    by fifer,
+                                    Feb 01, 2009 05:26 PM
+                                    </span>
+
+                                </dt>
+
+                                <dd>This 3 day online training will explore how to leverage Plone as a powerful Content Management system by understanding how it works, what addon products are ...</dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/7-tech-nw-online-plone-3-content-management-fundamentals-12" class="state-published">7 Tech NW: Online - Plone 3 Content Management Fundamentals</a>
+
+                                    <span class="discreet">
+                                    by fifer,
+                                    Nov 27, 2008 05:58 PM
+                                    </span>
+
+                                </dt>
+
+                                <dd>This 3 day online training will explore how to leverage Plone as a powerful Content Management system by understanding how it works, what addon products are ...</dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/7-tech-nw-online-plone-content-management-fundamentals-3" class="state-published">7 Tech NW: Online - Plone Content Management Fundamentals</a>
+
+                                    <span class="discreet">
+                                    by fifer,
+                                    Mar 18, 2009 02:08 AM
+                                    </span>
+
+                                </dt>
+
+                                <dd>This 3 day online training will explore how to leverage Plone as a powerful Content Management system by understanding how it works, what addon products are ...</dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/7-tech-nw-online-plone-content-management-fundamentals-2" class="state-published">7 Tech NW: Online - Plone Content Management Fundamentals</a>
+
+                                    <span class="discreet">
+                                    by fifer,
+                                    Feb 02, 2009 04:06 PM
+                                    </span>
+
+                                </dt>
+
+                                <dd>This 3 day online training will explore how to leverage Plone as a powerful Content Management system by understanding how it works, what addon products are ...</dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/7-tech-nw-online-plone-3-content-management-fundamentals-13" class="state-published">7 Tech NW: Online - Plone 3 Content Management Fundamentals</a>
+
+                                    <span class="discreet">
+                                    by fifer,
+                                    Jan 13, 2009 04:51 AM
+                                    </span>
+
+                                </dt>
+
+                                <dd>This 3 day online training will explore how to leverage Plone as a powerful Content Management system by understanding how it works, what addon products are ...</dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/c2e-training-online-plone-for-content-managers" class="state-published">C2E Training Online: Plone for Content Managers</a>
+
+                                    <span class="discreet">
+                                    by snowwrite,
+                                    Apr 23, 2009 07:37 PM
+                                    </span>
+
+                                </dt>
+
+                                <dd>Beginners course for content managers. </dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/corso-plone-free-cms" class="state-published">Redomino Plone 3 Basic Training </a>
+
+                                    <span class="discreet">
+                                    by redomino,
+                                    Jul 18, 2009 07:07 PM
+                                    </span>
+
+                                </dt>
+
+                                <dd>A one day training session focused on the perspective of the content editor: adding, editing, publishing and managing content with Plone. </dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/plone-training-basic" class="state-published">Redomino Plone 3 Basic Training </a>
+
+                                    <span class="discreet">
+                                    by redomino,
+                                    Oct 27, 2009 04:32 PM
+                                    </span>
+
+                                </dt>
+
+                                <dd>A one day training session focused on the perspective of the content editor: adding, editing, publishing and managing content with Plone. </dd>
+
+                            
+                        
+                        
+                            
+                                <dt class="contenttype-event">
+                                  
+                                   <a href="http://plone.org/events/community/plone-basic-training-italy" class="state-published">Redomino Plone 3 Basic Training </a>
+
+                                    <span class="discreet">
+                                    by redomino,
+                                    Dec 18, 2009 04:59 AM
+                                    </span>
+
+                                </dt>
+
+                                <dd>A one day training session focused on the perspective of the content editor: adding, editing, publishing and managing content with Plone. </dd>
+
+                            
+                        
+
+                        </dl></div>
+            
+
+        
+
+        
+        
+
+
+                        </div><div id="viewlet-below-content">
+</div>
+		</div> <!-- End cell -->
+
+		<div class="grid-cell position-two-thirds width-third">
+			<div id="sidebar">
+			</div>
+		</div>
+
+	</div> <!-- End row -->
+
+	<div class="grid-row"> 
+		<div class="grid-cell position-leftmost width-full">
+			<div id="footer-portlets">
+			</div>
+		</div>
+	</div> <!-- End footer portlets row -->
+</div>
+
+<div style="clear:both"> </div>
+
+</div><!-- end inner-wrapper -->
+<div id="push"></div>
+</div><!-- end outer-wrapper --><div id="footer-wrapper">
+	<div id="footer-gradient"></div>
+	<div id="footer">
+		<a id="footer-logo" href="http://plone.org" title="Plone CMS, the open source content management system"></a>
+		<p>The Plone<sup>®</sup> CMS/WCM is © 2000–2013 the Plone Foundation and friends. Site hosted by <a href="http://www.sixfeetup.com" style="color: white">Six Feet Up</a>.</p>
+		<p>Plone<sup>®</sup> and the Plone logo are registered trademarks of the Plone Foundation. You’re looking good today.</p>
+
+		<div id="sitemap">
+			<!-- <dl>
+				<dt><a href="">Plone for&#8230;</a></dt>
+				<dd><a href="">Small/Medium Business </a></dd>
+				<dd><a href="">Enterprise            </a></dd>
+				<dd><a href="">Non-profits           </a></dd>
+				<dd><a href="">Government            </a></dd>
+				<dd><a href="">Education             </a></dd>
+				<dd><a href="">Science               </a></dd>
+				<dd><a href="">Media &amp; Publishing</a></dd>
+			</dl> -->
+
+			<dl><dt><a href="/products">Downloads</a></dt>
+				<dd><a href="/download">Get Plone</a></dd>
+				<dd><a href="/products?getCategories=themes">Themes</a></dd>
+				<dd><a href="/products?getCategories=dev">Development tools</a></dd>
+				<dd><a href="/products?getCategories=auth">Authentication</a></dd>
+				<dd><a href="/products">…and more.</a></dd>
+			</dl><dl><dt><a href="/documentation">Documentation</a></dt>
+				<dd><a href="/documentation/faq/">FAQs</a></dd>
+				<dd><a href="/documentation/movies/">Tutorial videos</a></dd>
+				<dd><a href="/documentation/manual">Manuals</a></dd>
+				<dd><a href="/documentation/books">Books</a></dd>
+				<!-- <dd><a href="">Knowledge Base</a></dd> -->
+				<dd><a href="/documentation/error">Error Reference</a></dd>
+				<!-- <dd><a href="">Module documentation</a></dd> -->
+				<dd><a href="/support/sites">Sites using Plone</a></dd>
+			</dl><dl><dt><a href="http://dev.plone.org/plone">Developers</a></dt>
+				<dd><a href="http://plone.org/roadmap">Roadmap</a></dd>
+				<dd><a href="http://dev.plone.org/newticket">Report bugs in Plone</a></dd>
+				<dd><a href="https://dev.plone.org/newticket?field_component=Website">Report website issues</a></dd>
+				<dd><a href="http://dev.plone.org/timeline">Latest changes</a></dd>
+				<dd><a href="http://github.com/plone">Browse source</a></dd>
+				<dd><a href="https://dev.plone.org/#ContributetoPlone">Contribute to Plone</a></dd>
+				<dd><a href="http://planet.plone.org">Community blogs</a></dd>
+			</dl><dl><dt><a href="/foundation">Plone Foundation</a></dt>
+				<dd><a href="/foundation/foundation-donations">Donate</a></dd>
+				<dd><a href="/foundation/donors">Sponsors</a></dd>
+				<dd><a href="/foundation/meetings/minutes">Meeting minutes</a></dd>
+				<dd><a href="/team/FoundationBoard">Current board</a></dd>
+				<dd><a href="/foundation/members">Foundation members</a></dd>
+				<dd><a href="/foundation/membership">Apply for membership</a></dd>
+				<dd><a href="/foundation#contact">Contact</a></dd>
+			</dl><dl><dt><a href="/support">Support</a></dt>
+				<dd><a href="http://plone.net/providers">Commercial services</a></dd>
+				<dd><a href="/support/chat">Chat room</a></dd>
+				<dd><a href="/support/forums">Forums</a></dd>
+				<dd><a href="/support/for">Sector-specific forums</a></dd>
+				<dd><a href="/support/region">Region-specific forums</a></dd>
+				<dd><a href="/support/local-user-groups">Local user groups</a></dd>
+				<dd><a href="/events/training">Training</a></dd>
+			</dl></div>
+
+	</div>
+</div><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1907133-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script></body></html>
