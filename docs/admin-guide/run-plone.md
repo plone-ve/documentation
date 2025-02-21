@@ -92,7 +92,7 @@ Buildout:
 
 pip:
 :   ```shell
-    bin/zconsole debug instance/etc/zope.ini
+    bin/zconsole debug instance/etc/zope.conf
     ```
 
 `cookiecutter-plone-starter`:
