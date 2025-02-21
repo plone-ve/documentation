@@ -107,6 +107,6 @@ For any of these commands, press {kbd}`ctrl-d` to stop the process.
 To make sure that the request is fully set up for any code that uses `zope.globalrequest.getRequest`, you might need to use the following code.
 
 ```python
-    from zope.globalrequest import setRequest
-    setRequest(app.REQUEST)
-    ```
+from zope.globalrequest import setRequest
+setRequest(app.REQUEST)
+```
