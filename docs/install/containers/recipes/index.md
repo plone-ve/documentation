@@ -3,28 +3,28 @@ myst:
   html_meta:
     "description": "Plone 6 Docker image recipes"
     "property=og:description": "Plone 6 Docker image recipes"
-    "property=og:title": "Plone 6 Image recipes"
-    "keywords": "Plone 6, install, installation, docker, containers, Official Images"
+    "property=og:title": "Plone 6 image recipes"
+    "keywords": "Plone 6, install, installation, Docker, containers, official images"
 ---
 
-# Recipes
+# Docker recipes
 
-Here you have some useful recipes when working with Plone containers
+This chapter offers some useful recipes when working with Plone containers.
 
 
-## Remove access log from plone containers
+## Remove access log from Plone containers
 
-When working a project generated using [cookieplone](https://github.com/plone/cookieplone) you will be creating Plone containers for your project that are based on the official `plone/plone-backend` images.
+When you generate a project using [Cookieplone](https://github.com/plone/cookieplone), it creates Plone containers for your project that are based on the official [`plone/plone-backend`](https://github.com/plone/plone-backend) images.
 
-You may have noted that when you run your container or the official `plone/plone-backend` image, the output mixes both the event log and the access log making it hard to follow the logs you may have added to your application.
+When you run your container or the official `plone/plone-backend` image with logging, the output mixes both the event log and the access log, making it hard to follow the logs you may have added to your application.
+In such cases, you may have a Docker Compose setup with several components including a proxy server that already provides access logs.
+Instead of duplicating the logging output, it is common to remove the access logging from the Plone container.
 
-In such cases, you may end with a `docker compose` setup with several components in which you will have a proxy server that already provides access logs.
+To do so, create a custom {file}`zope.ini` file in your project's {file}`backend` folder with the following content.
 
-So it is a common usage configuration to remove the access logging from the Plone container.
+```{code-block} ini
+:emphasize-lines: 17-20
 
-To do so you will need a custom {file}`zope.ini` file in your project's {file}`backend` folder with the following content:
-
-```ini
 [app:zope]
 use = egg:Zope#main
 zope_conf = %(here)s/%(config_file)s
@@ -36,7 +36,6 @@ port = 8080
 threads = 2
 clear_untrusted_proxy_headers = false
 max_request_body_size = 1073741824
-
 
 [filter:translogger]
 use = egg:Paste#translogger
@@ -96,33 +95,18 @@ class = StreamHandler
 args = (sys.stderr,)
 level = INFO
 formatter = generic
-
 ```
 
-If you compare this file with the [original zope.ini file](https://github.com/plone/plone-backend/blob/6.1.x/skeleton/etc/zope.ini) that comes with the `plone/plone-backend` container, you may realize that the only change here is that we remove `translogger` from the `pipeline` option.
+Comparing this file with the [original `zope.ini` file](https://github.com/plone/plone-backend/blob/6.1.x/skeleton/etc/zope.ini) that comes with the `plone/plone-backend` container, you may realize that the only change is the `translogger` configuration was removed from the `pipeline` section.
+This [`translogger` middleware produces logs in the Apache Combined Log Format](https://docs.pylonsproject.org/projects/waitress/en/latest/logging.html).
+The above configuration removes it from the setup.
 
-This `translogger` middleware [produces logs in the Apache Combined Log Format](https://docs.pylonsproject.org/projects/waitress/en/latest/logging.html) and that is exactly what we want to remove in our setup.
+After adding the {file}`zope.ini` file in your project, adjust the {file}`Dockerfile` by inserting the command `COPY zope.ini etc/` before the `RUN` command as highlighted below.
+This new command copies the {file}`zope.ini` file into the container.
 
-After adding the mentioned file in your project, you need to adjust the {file}`Dockerfile` also.
+```{code-block} dockerfile
+:emphasize-lines: 4
 
-
-In your {file}`Dockerfile` you have the following contents:
-
-```Dockerfile
-...
-# Add local code
-COPY scripts/ scripts/
-COPY . src
-
-# Install local requirements and pre-compile mo files
-RUN <<EOT
-...
-```
-
-Just before the `RUN` command, you need to copy the {file}`zope.ini` file into the container, as follows:
-
-```Dockerfile
-...
 # Add local code
 COPY scripts/ scripts/
 COPY . src
@@ -132,5 +116,5 @@ COPY zope.ini etc/
 RUN <<EOT
 ```
 
-With these changes, after you build your project container as usual, it will not output the access log, but only the event log.
-
+After making these changes, build the project container as usual.
+It will no longer output the access log, but will continue to output the event log.
