@@ -30,6 +30,7 @@ You can choose from Classic UI or the new frontend, or specialized databases usi
 
 images/index
 examples/index
+recipes/index
 ```
 
 ## Getting started
