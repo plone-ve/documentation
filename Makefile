@@ -52,10 +52,12 @@ docs/plone.api:  ## Setup plone.api docs
 	@echo
 	@echo "Documentation of plone.api initialized."
 
-.PHONY: install-api
-install-api: docs/plone.api
+plone.api-install: docs/plone.api
+	touch plone.api-install
 	venv/bin/pip install plone.api -c submodules/plone.api/constraints.txt
 	venv/bin/pip install --no-deps -e submodules/plone.api/"[test]"
+	@echo "plone.api installed."
+	@echo
 
 docs/plone.restapi:  ## Setup plone.restapi docs
 	git submodule init
@@ -72,7 +74,7 @@ docs/volto:  ## Setup Volto docs
 	@echo "Documentation of volto initialized."
 
 .PHONY: deps
-deps: venv/bin/python docs/volto docs/plone.restapi install-api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
+deps: venv/bin/python docs/volto docs/plone.restapi plone.api-install  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, create symlinks to the source files, and finally install plone.api.
 
 .PHONY: html
 html: deps  ## Build html
