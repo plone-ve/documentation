@@ -113,7 +113,7 @@ After satisfying the prerequisites and having activated an LTS version of Node,
 generate the project.
 
 ```shell
-pipx run cookieplone project
+uvx cookieplone project
 ```
 
 You will be presented with a series of prompts.
@@ -121,7 +121,7 @@ You can accept the default values in square brackets (`[default-option]`) by hit
 For ease of documentation, we will use the default values.
 
 ```{tip}
-See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
+See the cookieplone's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
 ```
 
 ```{important}
