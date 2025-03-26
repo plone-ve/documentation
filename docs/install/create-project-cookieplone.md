@@ -59,7 +59,7 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 -   {term}`UV`
 -   {term}`nvm`
--   {term}`Node.js` LTS 20.x
+-   {term}`Node.js`
 -   {term}`GNU make`
 -   {term}`Git`
 
